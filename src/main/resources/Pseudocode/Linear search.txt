@@ -1,0 +1,42 @@
+Searching the array by checking each slot
+Input: Array to be searched, search term to be found
+Output: Position
+
+for each slot in array:
+	if current element equals term to be found:
+		return current position
+		
+return -1
+
+
+Searching the array by checking each slot
+Input: Array to be searched, search term to be found
+Output: value to be found
+
+for each slot in array:
+	if current element equals term to be found:
+		return current element
+		
+return -1
+
+Searching the array by checking each slot
+Input: Array to be searched, search term to be found
+Output: Count of values
+
+Create counter to track number of matches
+for each slot in array:
+	if current element equals term to be found:
+		Add one to counter
+		
+return counter
+
+
+Searching the array by checking each slot
+Input: Array to be searched, search term to be found
+Output: Found or not
+
+for each slot in array:
+	if current element equals term to be found:
+		return true
+		
+return false
