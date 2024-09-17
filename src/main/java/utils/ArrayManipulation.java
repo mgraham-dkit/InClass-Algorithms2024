@@ -21,4 +21,13 @@ public class ArrayManipulation {
         }
     }
 
+    public static int getPosition(int [] nums, int value){
+        for (int i = 0; i < nums.length; i++) {
+            if(value == nums[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+
 }

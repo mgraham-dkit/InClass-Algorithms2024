@@ -10,5 +10,7 @@ public class TestApplication {
         ArrayManipulation.multiplyByTwo(data);
         System.out.println(Arrays.toString(data));
         ArrayManipulation.printArray(data);
+
+        System.out.println("24 found at position: " + ArrayManipulation.getPosition(data, 25));
     }
 }
