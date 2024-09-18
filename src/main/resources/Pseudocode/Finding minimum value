@@ -1,0 +1,12 @@
+Finding the minimum value in an array
+Input: Array of numbers
+Output: Minimum value found in array
+
+Create a variable to store min value and set to Integer.MAX_VALUE
+
+for each element in array:
+    if current element < min:
+        Set min to current element
+
+Return min
+
