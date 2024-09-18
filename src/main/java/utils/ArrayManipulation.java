@@ -41,4 +41,15 @@ public class ArrayManipulation {
         return count;
     }
 
+    public static int getMax(int [] nums){
+        int max = Integer.MIN_VALUE;
+
+        for (int num : nums) {
+            if(num > max){
+                max = num;
+            }
+        }
+        return max;
+    }
+
 }
