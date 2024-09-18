@@ -30,4 +30,15 @@ public class ArrayManipulation {
         return -1;
     }
 
+    public static int getCount(int [] nums, int term){
+        int count = 0;
+
+        for (int num : nums) {
+            if(num == term){
+                count++;
+            }
+        }
+        return count;
+    }
+
 }
