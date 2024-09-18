@@ -12,5 +12,7 @@ public class TestApplication {
         ArrayManipulation.printArray(data);
 
         System.out.println("24 found at position: " + ArrayManipulation.getPosition(data, 25));
+
+        System.out.println("The largest value in our array is: " + ArrayManipulation.getMax(data));
     }
 }
