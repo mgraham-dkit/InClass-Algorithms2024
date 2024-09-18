@@ -1,0 +1,12 @@
+Finding the maximum value in an array
+Input: Array of numbers
+Output: Maximum value found in array
+
+Create a variable to store max value and set to Integer.MIN_VALUE
+
+for each element in array:
+    if current element > max:
+        Set max to current element
+
+Return max
+
