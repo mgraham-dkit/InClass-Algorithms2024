@@ -73,4 +73,19 @@ public class ArrayManipulation {
         return max;
     }
 
+    /**
+     * Gets the minimum value within the supplied array.
+     * @param nums The array to be searched.
+     * @return The minimum value found within the array.
+     */
+    public static int getMin(int [] nums){
+        int min = Integer.MAX_VALUE;
+
+        for (int num : nums) {
+            if(num < min){
+                min = num;
+            }
+        }
+        return min;
+    }
 }
