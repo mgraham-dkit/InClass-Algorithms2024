@@ -1,7 +1,5 @@
 package exercise_solutions.revision_exercises;
 
-import java.util.Scanner;
-
 public class Exercise1_3 {
     public static void main(String[] args) {
         /*
@@ -13,8 +11,8 @@ public class Exercise1_3 {
             Your program should still work correctly, even if the user enters the bigger number first (i.e. 7 and then 3).
          */
         // Take in numbers
-        int num1 = getValidNumber("Please enter the first number: ");
-        int num2 = getValidNumber("Please enter the second number: ");
+        int num1 = InputUtility.getValidInteger("Please enter the first number: ");
+        int num2 = InputUtility.getValidInteger("Please enter the second number: ");
 
         // Check if the values were entered in the right order
         // If the first number is the bigger one, swap the values around
@@ -29,27 +27,5 @@ public class Exercise1_3 {
             total += i;
         }
         System.out.println("The total of all numbers from " + num1 + " to " + num2 + " is "+ total);
-    }
-
-    // Create a reusable method that can display different text each time.
-    public static int getValidNumber(String prompt){
-        Scanner input = new Scanner(System.in);
-        boolean valid = false;
-        int num = 0;
-
-        while(!valid){
-            System.out.println(prompt);
-            // Check if entered value is numeric. If it is, store it and change boolean flag to end loop
-            if(input.hasNextInt()){
-                num = input.nextInt();
-                valid = true;
-            }else{
-                // Notify use about issue and clear the scanner content, so they can enter a new value.
-                System.out.println("Integer is required. Please try again.");
-                input.nextLine();
-            }
-        }
-
-        return num;
     }
 }

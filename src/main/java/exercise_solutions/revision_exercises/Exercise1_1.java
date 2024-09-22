@@ -1,7 +1,5 @@
 package exercise_solutions.revision_exercises;
 
-import java.util.Scanner;
-
 public class Exercise1_1 {
     public static void main(String[] args) {
         /*
@@ -18,7 +16,7 @@ public class Exercise1_1 {
         // Use a do-while to ensure even first number is properly processed
         do{
             // Use custom method to take in number to avoid potential errors with non-numeric data entry
-            value = getValidNumber();
+            value = InputUtility.getValidInteger("Please enter a number (-1 to end):");
             if(value != -1){
                 sum = sum + value;
                 count++;
@@ -33,26 +31,5 @@ public class Exercise1_1 {
         }else{
             System.out.println("No values entered.");
         }
-    }
-
-    public static int getValidNumber(){
-        Scanner input = new Scanner(System.in);
-        boolean valid = false;
-        int num = 0;
-
-        while(!valid){
-            System.out.println("Please enter a number (-1 to end):");
-            // Check if entered value is numeric. If it is, store it and change boolean flag to end loop
-            if(input.hasNextInt()){
-                num = input.nextInt();
-                valid = true;
-            }else{
-                // Notify use about issue and clear the scanner content, so they can enter a new value.
-                System.out.println("Integer is required. Please try again.");
-                input.nextLine();
-            }
-        }
-
-        return num;
     }
 }
