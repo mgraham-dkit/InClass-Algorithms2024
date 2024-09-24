@@ -1,0 +1,9 @@
+Growing an array
+Input: Array of numbers
+Output: New bigger version of array
+
+Create a temporary array of original array's size * 2
+for each element in original array:
+    Store current element from original array in same slot of new array
+
+Return new array
