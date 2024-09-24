@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class InputUtility {
     // Create a reusable method to take in a number that can display different text each time.
+
+    /**
+     * Repeatedly reads in a value from the user until a number is entered.
+     * @param prompt The information text to be displayed to the user.
+     * @return The first valid number entered by the user.
+     */
     public static int getValidInteger(String prompt){
         Scanner input = new Scanner(System.in);
         boolean valid = false;
@@ -25,6 +31,12 @@ public class InputUtility {
         return num;
     }
 
+    /**
+     * @param prompt
+     * @param lower
+     * @param upper
+     * @return
+     */
     // Create a reusable method to take in a number within a specified range
     public static int getValidInteger(String prompt, int lower, int upper){
         // If the upper boundary value is less than the lower boundary, end the method
