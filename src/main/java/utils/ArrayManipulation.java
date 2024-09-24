@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Arrays;
+
 public class ArrayManipulation {
     /**
      * Multiply the contents of each slot in an array by 2
@@ -87,5 +89,39 @@ public class ArrayManipulation {
             }
         }
         return min;
+    }
+
+    public static int [] grow(int [] nums){
+        int [] temp = new int[nums.length + 10];
+
+        for (int i = 0; i < nums.length; i++) {
+            temp[i] = nums[i];
+        }
+
+        return temp;
+    }
+
+    public static String [] grow(String [] text){
+        String [] temp = new String[text.length + 10];
+
+        for (int i = 0; i < text.length; i++) {
+            temp[i] = text[i];
+        }
+
+        return temp;
+    }
+
+    public static int[] merge(int [] nums1, int [] nums2){
+        int [] merged = new int[nums1.length + nums2.length];
+
+        for (int i = 0; i < nums1.length; i++) {
+            merged[i] = nums1[i];
+        }
+
+        for (int i = 0; i < nums2.length; i++) {
+            merged[i+nums1.length] = nums2[i];
+        }
+
+        return merged;
     }
 }
