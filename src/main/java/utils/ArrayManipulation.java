@@ -124,4 +124,44 @@ public class ArrayManipulation {
 
         return merged;
     }
+
+    public static int[] mergeUsingSecondCounter(int [] nums1, int [] nums2){
+        int [] merged = new int[nums1.length + nums2.length];
+        int mergedPos = 0;
+
+        for (int i = 0; i < nums1.length; i++) {
+            merged[mergedPos] = nums1[i];
+            mergedPos++;
+        }
+        System.out.println(Arrays.toString(merged));
+
+        for (int i = 0; i < nums2.length; i++) {
+            merged[mergedPos] = nums2[i];
+            mergedPos++;
+        }
+        System.out.println(Arrays.toString(merged));
+
+        return merged;
+    }
+
+    public static int[] sortedMerge(int [] nums1, int [] nums2){
+        int [] merged = new int[nums1.length + nums2.length];
+
+        int nums1Pos = 0;
+        int nums2Pos = 0;
+
+        for (int i = 0; i < merged.length; i++) {
+            if(nums1Pos < nums1.length && nums2Pos < nums2.length) {
+                if (nums1[nums1Pos] <= nums2[nums2Pos]) {
+                    merged[i] = nums1[nums1Pos];
+                    nums1Pos++;
+                } else {
+                    merged[i] = nums2[nums2Pos];
+                    nums2Pos++;
+                }
+            }
+            // todo: Add logic to check if nums1 is empty - if it is, pull a value from nums2
+            // todo: if it's not, pull a value from nums1
+        }
+    }
 }
