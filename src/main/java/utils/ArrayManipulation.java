@@ -1,7 +1,5 @@
 package utils;
 
-import java.util.Arrays;
-
 public class ArrayManipulation {
     /**
      * Multiply the contents of each slot in an array by 2
@@ -133,13 +131,11 @@ public class ArrayManipulation {
             merged[mergedPos] = nums1[i];
             mergedPos++;
         }
-        System.out.println(Arrays.toString(merged));
 
         for (int i = 0; i < nums2.length; i++) {
             merged[mergedPos] = nums2[i];
             mergedPos++;
         }
-        System.out.println(Arrays.toString(merged));
 
         return merged;
     }
@@ -151,7 +147,13 @@ public class ArrayManipulation {
         int nums2Pos = 0;
 
         for (int i = 0; i < merged.length; i++) {
-            if(nums1Pos < nums1.length && nums2Pos < nums2.length) {
+            if(nums1.length == nums1Pos){
+                merged[i] = nums2[nums2Pos];
+                nums2Pos++;
+            }else if(nums2.length == nums2Pos){
+                merged[i] = nums1[nums1Pos];
+                nums1Pos++;
+            }else{
                 if (nums1[nums1Pos] <= nums2[nums2Pos]) {
                     merged[i] = nums1[nums1Pos];
                     nums1Pos++;
@@ -160,8 +162,7 @@ public class ArrayManipulation {
                     nums2Pos++;
                 }
             }
-            // todo: Add logic to check if nums1 is empty - if it is, pull a value from nums2
-            // todo: if it's not, pull a value from nums1
         }
+        return merged;
     }
 }
