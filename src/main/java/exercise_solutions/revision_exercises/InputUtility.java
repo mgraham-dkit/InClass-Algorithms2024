@@ -31,12 +31,6 @@ public class InputUtility {
         return num;
     }
 
-    /**
-     * @param prompt
-     * @param lower
-     * @param upper
-     * @return
-     */
     // Create a reusable method to take in a number within a specified range
     public static int getValidInteger(String prompt, int lower, int upper){
         // If the upper boundary value is less than the lower boundary, end the method
