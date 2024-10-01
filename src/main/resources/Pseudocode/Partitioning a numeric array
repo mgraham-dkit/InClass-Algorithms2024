@@ -1,0 +1,25 @@
+Algorithm: Partition an array based on provided pivot
+Input: Original array of numbers, pivot to be used (a number)
+Output: Partitioned/filtered new array
+
+// VALIDATION
+if array is null:
+    Return null
+
+If array is empty:
+    Return new empty array
+
+// SETUP
+Create a new array left with size equal to input array
+Create a new array right with size equal to input array
+Create a tracker for left array and set to 0
+Create a tracker for right array and set to 0
+
+// PROCESSING
+For each element in source array:
+    If current element <= pivot:
+        Add to left array in left tracker position
+        Increment left tracker
+    else:
+        Add to right array in right tracker position
+        Increment right tracker
