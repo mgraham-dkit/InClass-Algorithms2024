@@ -165,4 +165,59 @@ public class ArrayManipulation {
         }
         return merged;
     }
+
+    public static int[] partitionAsc(int [] data, int pivot){
+        // Validation
+        if(data == null){
+            return null;
+        }
+
+        int [] partitioned = new int[data.length];
+
+        if(data.length <= 1){
+            for (int i = 0; i < data.length; i++) {
+                partitioned[i] = data[i];
+            }
+            return partitioned;
+        }
+
+        // Setup
+        int [] left = new int[data.length];
+        int [] right = new int[data.length];
+        int leftTrack = 0;
+        int rightTrack = 0;
+
+        // Logic A
+        // Filtering/Partitioning
+        for (int value : data) {
+            if(value <= pivot){
+                left[leftTrack++] = value;
+            }else{
+                right[rightTrack] = value;
+                rightTrack++;
+            }
+        }
+
+        // Logic B
+        // Merging
+        int[] merged = getMerged(leftTrack, rightTrack, left, right);
+
+        return merged;
+    }
+
+    public static int[] getMerged(int leftTrack, int rightTrack, int[] left, int[] right) {
+        int [] merged = new int[leftTrack + rightTrack];
+        int mergedPos = 0;
+
+        for (int i = 0; i < leftTrack; i++) {
+            merged[mergedPos] = left[i];
+            mergedPos++;
+        }
+
+        for (int i = 0; i < rightTrack; i++) {
+            merged[mergedPos] = right[i];
+            mergedPos++;
+        }
+        return merged;
+    }
 }
