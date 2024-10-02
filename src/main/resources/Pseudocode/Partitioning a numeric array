@@ -10,12 +10,13 @@ If array is empty:
     Return new empty array
 
 // SETUP
-Create a new array left with size equal to input array
-Create a new array right with size equal to input array
-Create a tracker for left array and set to 0
-Create a tracker for right array and set to 0
+Create a new array (left) with size equal to input array
+Create a new array (right) with size equal to input array
+Create a tracker for left array (leftTrack) and set to 0
+Create a tracker for right array (rightTrack) and set to 0
 
-// PROCESSING
+// PROCESSING:
+// FILTERING/PARTITIONING
 For each element in source array:
     If current element <= pivot:
         Add to left array in left tracker position
@@ -23,3 +24,17 @@ For each element in source array:
     else:
         Add to right array in right tracker position
         Increment right tracker
+
+// MERGING
+Create a new array (merged) of size (left tracker + right tracker)
+Create a variable (mergedPos) to track current position in merged array
+for each element in left array up to leftTrack:
+    Copy current element in left array to merged[mergedPos]
+    Increment mergedPos
+
+for each element in right array up to rightTrack:
+    Copy current element in right array to merged[mergedPos]
+    Increment mergedPos
+
+// RETURN OUTPUT
+return merged
