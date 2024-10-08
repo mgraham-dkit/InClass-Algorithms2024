@@ -220,4 +220,23 @@ public class ArrayManipulation {
         }
         return merged;
     }
+
+    public static int shiftDelete(int [] nums, int pos){
+        if(nums == null){
+            throw new IllegalArgumentException("Array cannot be null");
+        }
+
+        if(pos < 0 || pos >= nums.length){
+            throw new IndexOutOfBoundsException("Position cannot be outside boundary of array");
+        }
+
+        int deleted = nums[pos];
+
+        for (int i = pos; i < nums.length - 1; i++) {
+            nums[i] = nums[i+1];
+        }
+
+        nums[nums.length-1] = 0;
+        return deleted;
+    }
 }
