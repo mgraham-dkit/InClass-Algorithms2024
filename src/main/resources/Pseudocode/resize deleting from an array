@@ -1,0 +1,25 @@
+Resize delete from a supplied array
+Input: array to be deleted from, position from which to delete
+Output: New array containing all elements BUT the one in the position to be deleted
+
+
+// VALIDATION:
+If array does not exist:
+    throw new IllegalArgumentException
+
+if pos < 0 or pos >= length of array:
+    throw new IndexOutOfBoundsException
+
+// SETUP:
+Create a new array of size original array - 1
+Create a tracker to track where to insert in new array
+
+for each element in original array up to pos:
+    Copy element from original into slot [tracker] in new array
+    Increment tracker
+
+for each element in original array starting at pos + 1:
+    Copy element from original into slot [tracker] in new array
+    Increment tracker
+
+Return new array
