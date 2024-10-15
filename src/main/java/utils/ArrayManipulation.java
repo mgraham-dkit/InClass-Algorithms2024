@@ -1,5 +1,7 @@
 package utils;
 
+import business.Person;
+
 public class ArrayManipulation {
     /**
      * Multiply the contents of each slot in an array by 2
@@ -237,6 +239,25 @@ public class ArrayManipulation {
         }
 
         nums[nums.length-1] = 0;
+        return deleted;
+    }
+
+    public static Person shiftDelete(Person[] people, int pos){
+        if(people == null){
+            throw new IllegalArgumentException("Array cannot be null");
+        }
+
+        if(pos < 0 || pos >= people.length){
+            throw new IndexOutOfBoundsException("Position cannot be outside boundary of array");
+        }
+
+        Person deleted = people[pos];
+
+        for (int i = pos; i < people.length - 1; i++) {
+            people[i] = people[i+1];
+        }
+
+        people[people.length-1] = null;
         return deleted;
     }
 }
