@@ -1,0 +1,20 @@
+Action: Overwriting a position in an array with a new value
+Input: Array to be edited (array), value to be inserted (value),
+        position at which to insert (position)
+Output: Value originally found at the specified position
+
+
+// VALIDATION:
+If array is null:
+    Throw new IllegalArgumentException
+If position is less than 0 or greater than or equal to the size of the array:
+    Throw new IndexOutOfBoundsException
+
+// SETUP:
+Save array[position] in variable (original)
+
+// LOGIC:
+Set array[position] to value
+
+// OUTPUT:
+Return original
