@@ -1,0 +1,31 @@
+Action: Inserting into an array using resize insert
+Inputs: Array to add to (array), value to be added (value),
+    position at which to add (pos)
+Output: New version of array
+
+
+// VALIDATION:
+If array is null:
+    Throw new IllegalArgumentException
+If position is less than 0 or greater than or equal to the size of the array:
+    Throw new IndexOutOfBoundsException
+
+// SETUP:
+Create new array (resized) of size array.length + 1
+Create variable (tracker) to track current position in new array
+
+// LOGIC:
+For each slot up to pos:
+    Copy current value from array to resized[tracker]
+    Increment tracker by 1
+
+Increment tracker by 1
+
+For each slot from pos to end of array:
+    Copy current value from array to resized[tracker]
+    Increment tracker by 1
+
+Set resized[pos] to value
+
+// OUTPUT:
+Return resized
