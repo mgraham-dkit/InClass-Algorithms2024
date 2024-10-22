@@ -224,13 +224,8 @@ public class ArrayManipulation {
     }
 
     public static int shiftDelete(int [] nums, int pos){
-        if(nums == null){
-            throw new IllegalArgumentException("Array cannot be null");
-        }
-
-        if(pos < 0 || pos >= nums.length){
-            throw new IndexOutOfBoundsException("Position cannot be outside boundary of array");
-        }
+        validateArray(nums);
+        validatePosition(nums, pos);
 
         int deleted = nums[pos];
 
@@ -242,14 +237,21 @@ public class ArrayManipulation {
         return deleted;
     }
 
-    public static Person shiftDelete(Person[] people, int pos){
-        if(people == null){
-            throw new IllegalArgumentException("Array cannot be null");
-        }
-
-        if(pos < 0 || pos >= people.length){
+    private static void validatePosition(int[] nums, int pos) {
+        if(pos < 0 || pos >= nums.length){
             throw new IndexOutOfBoundsException("Position cannot be outside boundary of array");
         }
+    }
+
+    private static void validateArray(int[] nums) {
+        if(nums == null){
+            throw new IllegalArgumentException("Array cannot be null");
+        }
+    }
+
+    public static Person shiftDelete(Person[] people, int pos){
+        validateArray(people);
+        validatePosition(people, pos);
 
         Person deleted = people[pos];
 
@@ -259,5 +261,34 @@ public class ArrayManipulation {
 
         people[people.length-1] = null;
         return deleted;
+    }
+
+    public static Person overwrite(Person [] people, Person value, int pos){
+        validateArray(people);
+        validatePerson(value);
+        validatePosition(people, pos);
+
+        Person original = people[pos];
+
+        people[pos] = value;
+        return original;
+    }
+
+    private static void validatePosition(Person[] people, int pos) {
+        if(pos < 0 || pos >= people.length){
+            throw new IndexOutOfBoundsException("Position cannot be outside boundary of array");
+        }
+    }
+
+    private static void validatePerson(Person value) {
+        if(value == null){
+            throw new IllegalArgumentException("Person to be added cannot be null");
+        }
+    }
+
+    private static void validateArray(Person[] people) {
+        if(people == null){
+            throw new IllegalArgumentException("Array cannot be null");
+        }
     }
 }
