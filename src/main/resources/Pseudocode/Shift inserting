@@ -1,0 +1,22 @@
+Action: Inserting into an array using shift insert
+Inputs: Array to add to (array), value to be added (value),
+    position at which to add (pos)
+Output: Value that was lost
+
+// VALIDATION:
+If array is null:
+    Throw new IllegalArgumentException
+If position is less than 0 or greater than or equal to the size of the array:
+    Throw new IndexOutOfBoundsException
+
+// SETUP:
+Save final element of array in variable (removed)
+
+// LOGIC:
+For each position from array.length-1 to pos:
+    Set array[i] to array[i-1]
+
+Set array[pos] to value
+
+// OUTPUT:
+Return removed/deleted/lost value
