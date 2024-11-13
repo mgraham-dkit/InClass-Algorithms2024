@@ -39,3 +39,24 @@ for each element (stored) at position from 0 up to counter:
 return false
 
 
+----------SHRINK METHOD-------------------
+Action: Creating a new version of a supplied array containing only the first X elements
+Inputs: Array to be duplicated (originalArray), number of elements to retain (count)
+Output: New array containing X of the original elements
+
+// VALIDATION:
+If array is null:
+	Throw new Illegal Argument Exception
+
+If count is less than 0 or count >= length of array:
+    Throw new index out of bounds exception
+
+// SETUP:
+Create new array (newArray) of size count
+
+// LOGIC:
+For each position in new array:
+    Set newArray[i] to originalArray[i]
+
+// OUTPUT:
+Return newArray
