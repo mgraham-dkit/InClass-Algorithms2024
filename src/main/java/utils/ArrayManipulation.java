@@ -274,6 +274,16 @@ public class ArrayManipulation {
         return original;
     }
 
+    public static boolean contains(int [] data, int value, int numElements){
+        // VALIDATION
+        for (int i = 0; i < numElements; i++) {
+            if(data[i] == value){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static void validatePosition(Person[] people, int pos) {
         if(pos < 0 || pos >= people.length){
             throw new IndexOutOfBoundsException("Position cannot be outside boundary of array");
