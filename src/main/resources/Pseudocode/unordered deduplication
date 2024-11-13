@@ -18,3 +18,24 @@ For each element (current) from 0 to array.length in original array:
 		Increment counter
 
 Shrink array (using shrink) and return
+
+----------CONTAINS METHOD-------------------
+Action: Checking if a value is present within the first specified number of elements in the array
+Inputs: Array to be filtered, value to be found, number of positions to check
+Output: True if found, false otherwise
+
+// VALIDATION:
+If array is null:
+	Throw new Illegal Argument Exception
+
+If count is less than 0 or count >= length of array:
+    Throw new index out of bounds exception
+
+// LOGIC:
+for each element (stored) at position from 0 up to counter:
+	if current equals stored:
+		return true
+
+return false
+
+
