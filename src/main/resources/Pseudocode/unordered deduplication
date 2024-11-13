@@ -1,0 +1,20 @@
+Action: Filtering duplicates out of supplied array (deduplication)
+Inputs: Array to be filtered
+Output: New filtered array
+
+// VALIDATION:
+If array is null:
+	Throw new Illegal Argument Exception
+	
+// SETUP:
+Create new empty array with same size as original array
+Create counter and initialize to 0
+
+// LOGIC:
+For each element (current) from 0 to array.length in original array:
+	
+	if value not in filtered array (using contains()):
+		Set filtered[counter] to value
+		Increment counter
+
+Shrink array (using shrink) and return
