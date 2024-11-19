@@ -237,6 +237,60 @@ public class ArrayManipulation {
         return deleted;
     }
 
+    public static int[] deduplicate(int [] nums){
+        validateArray(nums);
+
+        if(nums.length == 0){
+            return nums;
+        }
+
+        int [] filtered = new int [nums.length];
+        int count = 0;
+
+        for (int i = 0; i < nums.length ; i++) {
+            if(!contains(filtered, nums[i], count)){
+                filtered[count] = nums[i];
+                count++;
+            }
+        }
+
+        if(count == nums.length){
+            return filtered;
+        }
+
+        return shrink(filtered, count);
+    }
+
+    public static boolean contains(int [] nums, int value, int count){
+        validateArray(nums);
+        validateCount(nums, count);
+
+        for (int i = 0; i < count; i++) {
+            if(value == nums[i]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void validateCount(int[] nums, int count) {
+        if(count < 0 || count > nums.length){
+            throw new IndexOutOfBoundsException("Number of positions to be checked cannot exceed the length of the " +
+                    "array");
+        }
+    }
+
+    public static int[] shrink(int [] nums, int count){
+        validateArray(nums);
+        validateCount(nums, count);
+
+        int [] resized = new int[count];
+        for (int i = 0; i < count; i++) {
+            resized[i] = nums[i];
+        }
+        return resized;
+    }
+
     private static void validatePosition(int[] nums, int pos) {
         if(pos < 0 || pos >= nums.length){
             throw new IndexOutOfBoundsException("Position cannot be outside boundary of array");
@@ -272,16 +326,6 @@ public class ArrayManipulation {
 
         people[pos] = value;
         return original;
-    }
-
-    public static boolean contains(int [] data, int value, int numElements){
-        // VALIDATION
-        for (int i = 0; i < numElements; i++) {
-            if(data[i] == value){
-                return true;
-            }
-        }
-        return false;
     }
 
     private static void validatePosition(Person[] people, int pos) {
