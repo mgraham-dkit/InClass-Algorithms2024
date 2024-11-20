@@ -1,0 +1,22 @@
+Action: Creates a new version of a supplied SORTED array without duplicates
+Input: Array to be deduplicated (array must be in sorted order)
+Output: New deduplicated array
+
+// VALIDATION:
+If array is null:
+	Throw new IllegalArgumentException
+
+if array.length is 0:
+	return new empty array
+
+// SET UP:
+Create a new array (filtered) of same size as original (original)
+Create a tracker (count) to store how many unique values we have encountered
+
+// LOGIC:
+for each element in original array up to second last position:
+	if current element (i) is not equal to next element (i+1):
+		Set filtered[count] to store current element
+		Increase count by 1
+
+Set filtered[count] to last element in original array
