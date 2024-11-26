@@ -1,0 +1,28 @@
+Action: Search for a specified value in a supplied array
+Input: Array to be searched, value to locate
+Output: Position at which element was located
+
+// VALIDATION:
+If array is null:
+    Throw new exception (e.g. IllegalArgumentException)
+
+// Bonus validation: ONLY for use if incoming value to locate is an object!
+If object to locate is null:
+    Throw new exception (e.g. IllegalArgumentException)
+
+// SET UP:
+Create variable to track start of data to be considered and set it to 0
+Create variable to track end of data to be considered and set it to array.length-1
+
+// LOGIC:
+while start <= end:
+    Calculate midpoint of data as start + (end-start)/2
+    if array[mid] equals value to be found:
+        return mid
+    if array[mid] < value to be found:
+        set start to mid + 1
+    else:
+        set end to mid - 1
+
+// OUTPUT:
+return -1 as no match was found
