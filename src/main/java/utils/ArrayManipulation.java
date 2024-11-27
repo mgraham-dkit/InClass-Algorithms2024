@@ -345,4 +345,29 @@ public class ArrayManipulation {
             throw new IllegalArgumentException("Array cannot be null");
         }
     }
+
+    public static int search(int [] nums, int value){
+        // VALIDATION:
+        if(nums == null){
+            throw new IllegalArgumentException("Array to be searched cannot be null");
+        }
+
+        // SETUP:
+        int start = 0;
+        int end = nums.length-1;
+
+        while(start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (nums[mid] == value){
+                return mid;
+            }else if(value > nums[mid]){
+                start = mid + 1;
+            }else{
+                end = mid -1;
+            }
+
+        }
+        return -1;
+    }
 }
