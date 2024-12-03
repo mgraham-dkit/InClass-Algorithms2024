@@ -1,0 +1,20 @@
+Action: Sort a supplied array of numbers in ascending order
+Input: Array to be sorted (data)
+Output: Sorted version of the array
+(In-place sort performed, no new array produced)
+
+// VALIDATION:
+if data is null:
+	Throw new IllegalArgumentException
+
+if data.length <= 1:
+	return
+
+// LOGIC:
+for each eleCount in data:
+	for each slot from 0 to data.length-1-eleCount:
+		if data[i] > data[i+1]:
+			Swap data[i] with data[i+1]:
+			Create temp variable and set to data[i]
+			Set data[i] to data[i+1]
+			Set data[i+1] to temp

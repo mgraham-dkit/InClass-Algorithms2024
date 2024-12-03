@@ -2,14 +2,13 @@ package utils;
 
 import business.Book;
 
-import java.util.Arrays;
 
 public class Library {
     private Book [] books;
 
     public Library(Book[] books){
         if(books == null){
-            books = new Book[ 0];
+            books = new Book[0];
         }
         this.books = books;
         //Arrays.sort(books);
