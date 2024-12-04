@@ -14,7 +14,7 @@ public class TestingSorts {
         }
 
         // Check behaviour with empty array
-        numbers = new int[]{0};
+        numbers = new int[0];
         testSort(numbers, "Empty array");
 
         // Check behaviour with array containing 1 slot

@@ -1,0 +1,21 @@
+Action: Sort a supplied array of numbers in ascending order
+Input: Array to be sorted (data)
+Output: Sorted version of the array
+(In-place sort performed, no new array produced)
+
+// VALIDATION:
+if data is null:
+	Throw new IllegalArgumentException
+
+if data.length <= 1:
+	return
+
+// LOGIC:
+
+for startPos = 0 while startPos < data.length-1:
+	Create minPos and set to startPos
+	for each slot in array starting at startPos+1:
+		if data[i] < data[minPos]:
+			Set minPos = i
+
+	Swap data[start] with data[minPos]

@@ -371,6 +371,24 @@ public class ArrayManipulation {
         return -1;
     }
 
+    public static void sort(String [] data){
+        if(data == null){
+            throw new IllegalArgumentException("Array to be sorted cannot be null");
+        }
+
+        if(data.length <= 1){
+            return;
+        }
+
+        for (int eleCount = 0; eleCount < data.length; eleCount++) {
+            for (int i = 0; i < data.length - 1 - eleCount; i++) {
+                if(data[i].compareToIgnoreCase(data[i+1]) > 0){
+                    swap(data, i);
+                }
+            }
+        }
+    }
+
     public static void sort(int [] data){
         if(data == null){
             throw new IllegalArgumentException("Array to be sorted cannot be null");
@@ -391,6 +409,12 @@ public class ArrayManipulation {
 
     private static void swap(int[] data, int i) {
         int temp = data[i];
+        data[i] = data[i +1];
+        data[i +1] = temp;
+    }
+
+    private static void swap(String[] data, int i) {
+        String temp = data[i];
         data[i] = data[i +1];
         data[i +1] = temp;
     }
