@@ -394,4 +394,27 @@ public class ArrayManipulation {
         data[i] = data[i +1];
         data[i +1] = temp;
     }
+
+    public static void optimisedSort(int [] data){
+        if(data == null){
+            throw new IllegalArgumentException("Array to be sorted cannot be null");
+        }
+
+        if(data.length <= 1){
+            return;
+        }
+
+        boolean swapped = true;
+        int count = 0;
+        while(swapped){
+            swapped = false;
+            for (int i = 0; i < data.length - 1 - count; i++) {
+                if(data[i] > data[i+1]){
+                    swap(data, i);
+                    swapped = true;
+                }
+            }
+            count++;
+        }
+    }
 }
