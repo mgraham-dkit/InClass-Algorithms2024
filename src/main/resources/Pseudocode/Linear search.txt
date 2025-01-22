@@ -6,7 +6,7 @@ for each slot in array:
 	if current element equals term to be found:
 		return current position
 		
-return null
+return -1
 
 
 Searching the array by checking each slot
